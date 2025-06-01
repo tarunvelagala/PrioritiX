@@ -1,6 +1,6 @@
-package com.vtkr.PrioritiX.repository;
+package com.vtkr.prioritix.repository;
 
-import com.vtkr.PrioritiX.model.Task;
+import com.vtkr.prioritix.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

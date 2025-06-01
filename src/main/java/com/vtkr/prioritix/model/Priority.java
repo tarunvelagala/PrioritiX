@@ -1,4 +1,4 @@
-package com.vtkr.PrioritiX.model;
+package com.vtkr.prioritix.model;
 
 /**
 * Enumeration representing task priority based on Eisenhower Matrix.

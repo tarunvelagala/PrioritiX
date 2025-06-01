@@ -1,4 +1,4 @@
-package com.vtkr.PrioritiX;
+package com.vtkr.prioritix;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

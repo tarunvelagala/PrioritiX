@@ -1,4 +1,4 @@
-package com.vtkr.PrioritiX.model;
+package com.vtkr.prioritix.model;
 
 import java.time.LocalDateTime;
 

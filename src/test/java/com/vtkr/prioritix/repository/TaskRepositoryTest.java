@@ -1,7 +1,7 @@
-package com.vtkr.PrioritiX.repository;
+package com.vtkr.prioritix.repository;
 
-import com.vtkr.PrioritiX.model.Task;
-import com.vtkr.PrioritiX.model.Priority;
+import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.Priority;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
