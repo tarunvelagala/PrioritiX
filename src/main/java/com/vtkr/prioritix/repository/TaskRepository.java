@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * Repository interface for {@link Task} entity.
- * 
+ *
  * Provides CRUD operations and database interactions for tasks.
  */
 @Repository

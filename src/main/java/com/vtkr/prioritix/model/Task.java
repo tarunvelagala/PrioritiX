@@ -18,7 +18,7 @@ import lombok.Setter;
 
 /**
  * Entity representing a task in the PrioritiX application.
- * 
+ *
  * This task is classified using the Eisenhower Matrix (priority), and includes
  * metadata like completion status and creation time.
  */
