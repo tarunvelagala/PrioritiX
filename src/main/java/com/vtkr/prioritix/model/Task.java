@@ -16,6 +16,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import com.vtkr.prioritix.constants.TableName;;
+
 /**
  * Entity representing a task in the PrioritiX application.
  *
@@ -23,7 +25,7 @@ import lombok.Setter;
  * metadata like completion status and creation time.
  */
 @Entity
-@Table(name = "tasks")
+@Table(name = TableName.TASKS)
 @Getter
 @Setter
 @NoArgsConstructor
