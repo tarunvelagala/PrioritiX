@@ -14,6 +14,7 @@ import jakarta.persistence.Table;
 import lombok.Builder;
 
 import com.vtkr.prioritix.constants.TableName;
+import lombok.Getter;
 
 /**
  * Entity representing a task in the PrioritiX application.
@@ -22,6 +23,7 @@ import com.vtkr.prioritix.constants.TableName;
  */
 @Entity
 @Table(name = TableName.TASKS)
+@Getter
 @Builder
 public class Task {
 
