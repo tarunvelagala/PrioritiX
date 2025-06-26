@@ -34,8 +34,6 @@ dependencies {
 
     runtimeOnly("com.h2database:h2")
 
-    developmentOnly("org.springframework.boot:spring-boot-devtools")
-
     testCompileOnly("org.projectlombok:lombok")
     testAnnotationProcessor("org.projectlombok:lombok")
 
