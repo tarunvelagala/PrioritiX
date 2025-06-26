@@ -38,16 +38,14 @@ dependencies {
     testAnnotationProcessor("org.projectlombok:lombok")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-}
 
-// Use JUnit Platform (JUnit 5)
-tasks.withType<Test>().configureEach {
-    useJUnitPlatform()
+    // https://docs.gradle.org/8.12.1/userguide/upgrading_version_8.html#test_framework_implementation_dependencies
+    testImplementation("org.junit.jupiter:junit-jupiter")
 }
 
 // Ensure JaCoCo report is generated after tests
 tasks.test {
+    useJUnitPlatform()
     finalizedBy(tasks.jacocoTestReport)
 }
 
@@ -55,14 +53,6 @@ tasks.test {
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
     reports {
-        xml.required.set(false)
-        csv.required.set(false)
         html.required.set(true)
-        html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
     }
-}
-
-// (Optional) Set JaCoCo version explicitly
-jacoco {
-    toolVersion = "0.8.11"
 }
