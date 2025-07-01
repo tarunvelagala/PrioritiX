@@ -3,6 +3,7 @@ package com.vtkr.prioritix.service;
 import java.util.UUID;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -13,6 +14,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import com.vtkr.prioritix.TestConstants;
 import com.vtkr.prioritix.model.Task;
 import com.vtkr.prioritix.repository.TaskRepository;
+import com.vtkr.prioritix.service.impl.TaskServiceImpl;
 
 import static org.mockito.ArgumentMatchers.anyString;
 
@@ -26,7 +28,14 @@ public class TaskServiceTest {
     private TaskRepository mockTaskRepository;
 
     @InjectMocks
+    private TaskServiceImpl mockTaskServiceImpl;
+
     private TaskService classToBeTested;
+
+    @BeforeEach
+    public void setup() {
+        classToBeTested = mockTaskServiceImpl;
+    }
 
     @Test
     void constructor_ShouldInitializeService() {
@@ -35,7 +44,7 @@ public class TaskServiceTest {
 
     @Test
     void constructor_WhenTaskRepositoryIsNull_ShouldThrowNullPointerException() {
-        Assertions.assertThrows(NullPointerException.class, () -> new TaskService(null));
+        Assertions.assertThrows(NullPointerException.class, () -> new TaskServiceImpl(null));
     }
 
     @Test
