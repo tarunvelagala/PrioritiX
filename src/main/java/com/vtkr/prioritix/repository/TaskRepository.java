@@ -9,6 +9,5 @@ import java.util.UUID;
  * JPA repository for {@link Task} entity with UUID as the ID type.
  */
 public interface TaskRepository extends JpaRepository<Task, UUID> {
-
-    Task createTask(Task task);
+    
 }

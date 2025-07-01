@@ -19,7 +19,7 @@ public class TaskRepositoryTest {
     @Test
     public void givenNewTask_whenSave_thenSuccess() {
         final Task newTask = TestConstants.aTask();
-        final Task savedTask = taskRepository.createTask(newTask);
+        final Task savedTask = taskRepository.save(newTask);
 
         Assertions.assertNotNull(savedTask);
         Assertions.assertNotNull(savedTask.getId());
