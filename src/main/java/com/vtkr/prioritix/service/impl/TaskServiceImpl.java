@@ -18,7 +18,7 @@ public class TaskServiceImpl implements TaskService {
     private final TaskRepository taskRepository;
 
     /**
-     * Constructor for Task repository.
+     * Constructor for TaskService.
      * 
      * @param taskRepository {@link TaskRepository}
      */
