@@ -32,32 +32,32 @@ public class Task {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    private final UUID id;
 
     /**
      * Title or name of the task. Cannot be null.
      */
     @Column(nullable = false)
-    private String title;
+    private final String title;
 
     /**
      * Optional detailed description of the task.
      */
-    private String description;
+    private final String description;
 
     /**
      * Priority of the task based on Eisenhower Matrix quadrants.
      */
     @Enumerated(EnumType.STRING)
-    private Priority priority;
+    private final Priority priority;
 
     /**
      * Completion status of the task. True if completed, false otherwise.
      */
-    private boolean completed;
+    private final boolean completed;
 
     /**
      * Timestamp when the task was created.
      */
-    private LocalDateTime createdAt;
+    private final LocalDateTime createdAt = LocalDateTime.now();
 }
