@@ -1,7 +1,0 @@
-name: PrioritiX
-
-on:
-  workflow_run:
-    workflows: [ "Code Review" ]
-    types:
-      - completed

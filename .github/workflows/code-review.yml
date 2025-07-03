@@ -7,4 +7,4 @@ on:
 jobs:
   # Checkstyle reviewer
   checkstyle:
-    uses: ./.github/workflows/jobs/checkstyle-review.yml
+    uses: ./.github/workflows/checkstyle-review.yml
