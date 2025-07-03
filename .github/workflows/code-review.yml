@@ -1,0 +1,10 @@
+name: Code Review
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Checkstyle reviewer
+  checkstyle:
+    uses: ./.github/workflows/jobs/checkstyle-review.yml

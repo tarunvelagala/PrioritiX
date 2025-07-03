@@ -1,0 +1,12 @@
+name: Checkstyle Review
+
+on:
+  workflow_call: { }
+
+jobs:
+  checkstyle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Checkstyle
+        run: ./gradlew checkstyleMain
