@@ -1,5 +1,6 @@
 plugins {
     java
+    checkstyle
     jacoco
     id("org.springframework.boot") version "3.5.0"
     id("io.spring.dependency-management") version "1.1.7"
@@ -41,6 +42,15 @@ dependencies {
 
     // https://docs.gradle.org/8.12.1/userguide/upgrading_version_8.html#test_framework_implementation_dependencies
     testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+// Check style configuration and reports.
+tasks.withType<Checkstyle> {
+    // optional: show violations in console
+    isShowViolations = true
+    reports {
+        html.required.set(true)
+    }
 }
 
 // Ensure JaCoCo report is generated after tests
