@@ -66,3 +66,14 @@ tasks.jacocoTestReport {
         html.required.set(true)
     }
 }
+
+// JaCoCo Test Coverage Rules
+tasks.jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = "0.7".toBigDecimal()
+            }
+        }
+    }
+}
