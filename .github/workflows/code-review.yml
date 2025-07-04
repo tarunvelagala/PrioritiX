@@ -1,0 +1,24 @@
+# Code review Job
+name: Code Review
+
+on:
+  workflow_call:
+    inputs:
+      java-version:
+        required: true
+        type: string
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Java and Gradle
+        uses: ./.github/actions/setup-java-gradle # Use the composite action
+        with:
+          java-version: ${{ inputs.java-version }} # Use the input value
+
+      - name: Run Gradle Checkstyle
+        run: ./gradlew check

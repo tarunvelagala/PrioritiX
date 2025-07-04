@@ -1,0 +1,19 @@
+name: PrioritiX
+
+on:
+  push:
+    branches:
+      - feat/pipeline-dev
+  pull_request:
+    branches:
+      - feat/pipeline-dev
+
+env:
+  JAVA_VERSION: '21'
+
+jobs:
+  code-review:
+    name: Code Review & Quality Checks
+    uses: ./.github/workflows/code-review.yml
+    with:
+      java-version: ${{ env.JAVA_VERSION }}

@@ -1,0 +1,24 @@
+# Setup Java and Gradle Step
+name: 'Setup Java & Gradle'
+description: 'Sets up Java and configures Gradle caching'
+inputs:
+  java-version:
+    description: 'Java version'
+    required: true
+  distribution:
+    description: 'Java distribution'
+    required: false
+    default: 'corretto'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ inputs.java-version }}
+        distribution: ${{ inputs.distribution }}
+        cache: 'gradle'
+    - name: Grant execute permission to gradlew
+      run: chmod +x ./gradlew
+      shell: bash
