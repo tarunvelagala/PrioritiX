@@ -1,0 +1,15 @@
+name: PrioritiX Pipeline
+
+on:
+  workflow_dispatch:
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      - name: Setup Springboot and Gradle
+        # Use the custom action to set up Spring Boot Gradle  
+        uses: ./github/actions/setup-springboot-gradle

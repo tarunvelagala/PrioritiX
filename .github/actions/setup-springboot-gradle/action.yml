@@ -1,0 +1,10 @@
+name: 'Setup Springboot and Gradle'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Spring Gradle Build Action
+      uses: spring-io/spring-gradle-build-action@v2
+      with:
+        java-version: 21
+        distribution: 'corretto'
