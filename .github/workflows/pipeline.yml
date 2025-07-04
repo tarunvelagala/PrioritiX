@@ -16,4 +16,4 @@ jobs:
     name: Code Review & Quality Checks
     uses: ./.github/workflows/code-review.yml
     with:
-      java-version: ${{ env.JAVA_VERSION }}
+      java-version: $JAVA_VERSION
