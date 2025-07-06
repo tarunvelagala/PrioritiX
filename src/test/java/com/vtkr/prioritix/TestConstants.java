@@ -10,13 +10,13 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class TestConstants {
 
-    public final String TASK_TITLE = "TASK_TITLE";
+    public static final String TASK_TITLE = "TASK_TITLE";
 
-    public final String TASK_DESCRIPTION = "TASK_DESCRIPTION";
+    public static final String TASK_DESCRIPTION = "TASK_DESCRIPTION";
 
-    public final Priority TASK_PRIORITY = Priority.URGENT_IMPORTANT;
+    public static final Priority TASK_PRIORITY = Priority.URGENT_IMPORTANT;
 
-    public final boolean COMPLETED = false;
+    public static final boolean COMPLETED = false;
 
     /**
      * Method for creating mock task.

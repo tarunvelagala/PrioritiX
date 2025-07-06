@@ -15,12 +15,6 @@ java {
     }
 }
 
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
-    }
-}
-
 repositories {
     mavenCentral()
 }
@@ -35,18 +29,17 @@ dependencies {
 
     runtimeOnly("com.h2database:h2")
 
-    testCompileOnly("org.projectlombok:lombok")
-    testAnnotationProcessor("org.projectlombok:lombok")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
-
-    // https://docs.gradle.org/8.12.1/userguide/upgrading_version_8.html#test_framework_implementation_dependencies
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.projectlombok:lombok")
+}
+
+checkstyle {
+    configFile = file("config/checkstyle/checkstyle.xml")
 }
 
 // Check style configuration and reports.
 tasks.withType<Checkstyle> {
-    // optional: show violations in console
     isShowViolations = true
     reports {
         html.required.set(true)
@@ -56,7 +49,7 @@ tasks.withType<Checkstyle> {
 // Ensure JaCoCo report is generated after tests
 tasks.test {
     useJUnitPlatform()
-    finalizedBy(tasks.jacocoTestReport)
+    finalizedBy(tasks.jacocoTestReport, tasks.jacocoTestCoverageVerification)
 }
 
 // JaCoCo report configuration
@@ -72,7 +65,9 @@ tasks.jacocoTestCoverageVerification {
     violationRules {
         rule {
             limit {
-                minimum = "0.7".toBigDecimal()
+                counter = "LINE"
+                value = "COVEREDRATIO"
+                minimum = "0.80".toBigDecimal()
             }
         }
     }
