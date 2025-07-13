@@ -1,5 +1,7 @@
 package com.vtkr.prioritix.service;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.junit.jupiter.api.Assertions;
@@ -12,6 +14,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.vtkr.prioritix.TestConstants;
+import com.vtkr.prioritix.model.Priority;
 import com.vtkr.prioritix.model.Task;
 import com.vtkr.prioritix.repository.TaskRepository;
 import com.vtkr.prioritix.service.impl.TaskServiceImpl;
@@ -87,4 +90,53 @@ public class TaskServiceTest {
         Assertions.assertEquals(taskToBeCreated.getId(), result.getId());
         Mockito.verify(mockTaskRepository).save(taskToBeCreated);
     }
+
+    @Test
+    void getTasksByPriority_WhenNullTasksList_shouldReturnEmptyPriorityMap() {
+        // Given
+        final Map<Priority, List<Task>> expectedTasksByPriority = Map.of();
+
+        // When
+        Mockito.when(mockTaskRepository.findAll()).thenReturn(null);
+        final Map<Priority, List<Task>> actualTasksByPriority = classToBeTested.getTasksByPriority();
+
+        // Then
+        Assertions.assertEquals(expectedTasksByPriority, actualTasksByPriority);
+        Assertions.assertEquals(0, actualTasksByPriority.size());
+    }
+
+    @Test
+    void getTasksByPriority_WhenEmptyTasks_shouldReturnEmptyPriorityMap() {
+        // Given
+        final Map<Priority, List<Task>> expectedTasksByPriority = Map.of();
+
+        // When
+        Mockito.when(mockTaskRepository.findAll()).thenReturn(TestConstants.EMPTY_TASK_LIST);
+        final Map<Priority, List<Task>> actualTasksByPriority = classToBeTested.getTasksByPriority();
+
+        // Then
+        Assertions.assertEquals(expectedTasksByPriority, actualTasksByPriority);
+        Assertions.assertEquals(0, actualTasksByPriority.size());
+    }
+
+    @Test
+    void getTasksByPriority_WhenTasksExist_ShouldReturnMapOfPriorityToTaskList() {
+        // Given
+        final List<Task> tasks = TestConstants.aTaskList();
+        final Map<Priority, List<Task>> expectedTasksByPriority = Map.of(
+            Priority.URGENT_IMPORTANT, tasks
+        );
+
+        // When
+        Mockito.when(mockTaskRepository.findAll()).thenReturn(tasks);
+        final Map<Priority, List<Task>> actualTasksByPriority = classToBeTested.getTasksByPriority();
+
+        // Then
+        Mockito.verify(mockTaskRepository).findAll();
+        Assertions.assertEquals(expectedTasksByPriority, actualTasksByPriority);
+        Assertions.assertEquals(1, actualTasksByPriority.size());
+        Assertions.assertTrue(actualTasksByPriority.containsKey(Priority.URGENT_IMPORTANT));
+        Assertions.assertEquals(tasks, actualTasksByPriority.get(Priority.URGENT_IMPORTANT));
+    }
+
 }

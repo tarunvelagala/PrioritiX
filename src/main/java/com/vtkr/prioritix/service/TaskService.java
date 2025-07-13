@@ -1,5 +1,9 @@
 package com.vtkr.prioritix.service;
 
+import java.util.List;
+import java.util.Map;
+
+import com.vtkr.prioritix.model.Priority;
 import com.vtkr.prioritix.model.Task;
 
 /**
@@ -14,4 +18,11 @@ public interface TaskService {
      * @return {@link Task} created task.
      */
     public Task createTask(final Task task);
+
+    /**
+     * Gets Map of Priority to Task list.
+     * 
+     * @return Map of Priority to Task list.
+     */
+    public Map<Priority, List<Task>> getTasksByPriority();
 }

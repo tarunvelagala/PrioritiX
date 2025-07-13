@@ -1,5 +1,9 @@
 package com.vtkr.prioritix.controller;
 
+import java.util.List;
+import java.util.Map;
+
+import com.vtkr.prioritix.model.Priority;
 import com.vtkr.prioritix.model.Task;
 
 /**
@@ -13,4 +17,11 @@ public interface TaskController {
      * @return The created task, possibly with an assigned ID.
      */
     Task createTask(final Task task);
+
+    /**
+     * Gets a map of tasks grouped by their priority.
+     * 
+     * @return Map of {@link Priority} to list of {@link Task} objects.
+     */
+    Map<Priority, List<Task>> getTasksByPriority();
 }
