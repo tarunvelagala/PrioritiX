@@ -11,10 +11,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 
 import com.vtkr.prioritix.constants.TableName;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 /**
  * Entity representing a task in the PrioritiX application.
@@ -25,6 +27,8 @@ import lombok.Getter;
 @Table(name = TableName.TASKS)
 @Getter
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Task {
 
     /**
@@ -32,32 +36,34 @@ public class Task {
      */
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private final UUID id;
+    private UUID id;
 
     /**
      * Title or name of the task. Cannot be null.
      */
     @Column(nullable = false)
-    private final String title;
+    private String title;
 
     /**
      * Optional detailed description of the task.
      */
-    private final String description;
+    private String description;
 
     /**
      * Priority of the task based on Eisenhower Matrix quadrants.
      */
     @Enumerated(EnumType.STRING)
-    private final Priority priority;
+    private Priority priority;
 
     /**
      * Completion status of the task. True if completed, false otherwise.
      */
-    private final boolean completed;
+    private boolean completed;
 
     /**
      * Timestamp when the task was created.
      */
+    @Builder.Default
+    @Column(nullable = false, updatable = false)
     private final LocalDateTime createdAt = LocalDateTime.now();
 }
