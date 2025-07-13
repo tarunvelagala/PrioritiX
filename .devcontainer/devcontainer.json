@@ -33,7 +33,8 @@
 				"vscjava.vscode-gradle",
 				"pkief.material-icon-theme",
 				"ms-vscode-remote.remote-containers",
-				"postman.postman-for-vscode"
+				"postman.postman-for-vscode",
+				"ms-vscode.live-server"
 			]
 		}
 	}
