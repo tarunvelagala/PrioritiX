@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.vtkr.prioritix.model.Priority;
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 
 /**
  * Defines the contract for managing tasks.

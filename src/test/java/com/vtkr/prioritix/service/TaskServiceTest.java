@@ -15,7 +15,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import com.vtkr.prioritix.TestConstants;
 import com.vtkr.prioritix.model.Priority;
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 import com.vtkr.prioritix.repository.TaskRepository;
 import com.vtkr.prioritix.service.impl.TaskServiceImpl;
 

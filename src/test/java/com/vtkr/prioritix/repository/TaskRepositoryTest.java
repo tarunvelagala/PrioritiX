@@ -1,7 +1,7 @@
 package com.vtkr.prioritix.repository;
 
 import com.vtkr.prioritix.TestConstants;
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

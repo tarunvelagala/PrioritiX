@@ -1,6 +1,6 @@
 package com.vtkr.prioritix.repository;
 
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;

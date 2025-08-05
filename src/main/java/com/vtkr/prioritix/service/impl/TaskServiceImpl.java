@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.vtkr.prioritix.model.Priority;
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 import com.vtkr.prioritix.repository.TaskRepository;
 import com.vtkr.prioritix.service.TaskService;
 

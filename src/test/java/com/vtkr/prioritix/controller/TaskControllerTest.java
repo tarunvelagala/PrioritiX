@@ -3,7 +3,7 @@ package com.vtkr.prioritix.controller;
 import com.vtkr.prioritix.TestConstants;
 import com.vtkr.prioritix.controller.impl.TaskControllerImpl;
 import com.vtkr.prioritix.model.Priority;
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 import com.vtkr.prioritix.service.TaskService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

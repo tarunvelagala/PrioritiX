@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.vtkr.prioritix.controller.TaskController;
 import com.vtkr.prioritix.model.Priority;
-import com.vtkr.prioritix.model.Task;
+import com.vtkr.prioritix.model.entity.Task;
 import com.vtkr.prioritix.service.TaskService;
 
 import lombok.NonNull;

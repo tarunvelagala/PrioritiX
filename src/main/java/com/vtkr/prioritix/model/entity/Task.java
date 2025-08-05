@@ -1,8 +1,9 @@
-package com.vtkr.prioritix.model;
+package com.vtkr.prioritix.model.entity;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import com.vtkr.prioritix.model.Priority;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
