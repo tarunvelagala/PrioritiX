@@ -54,7 +54,8 @@ public class Task {
      * Priority of the task based on Eisenhower Matrix quadrants.
      */
     @Enumerated(EnumType.STRING)
-    private Priority priority;
+    @Builder.Default
+    private Priority priority = Priority.NOT_URGENT_NOT_IMPORTANT;
 
     /**
      * Completion status of the task. True if completed, false otherwise.
