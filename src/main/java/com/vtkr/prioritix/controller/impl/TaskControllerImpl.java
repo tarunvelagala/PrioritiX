@@ -21,7 +21,7 @@ import lombok.NonNull;
  * TaskController implementation for managing {@link Task} operations.
  */
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping("/api/v1/tasks")
 public class TaskControllerImpl implements TaskController {
 
     private final TaskService taskService;
